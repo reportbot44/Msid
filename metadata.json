@@ -1,0 +1,6 @@
+{
+  "name": "AI SEO SaaS Dashboard",
+  "description": "An advanced full-stack AI-powered SEO SaaS dashboard featuring keyword research, autonomous content agents, topic clustering, content gap analysis, and automated generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
