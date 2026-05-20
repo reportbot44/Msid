@@ -15,7 +15,9 @@ import {
   Flame,
   User,
   BarChart3,
-  ShieldCheck
+  ShieldCheck,
+  Code,
+  Coins
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -45,6 +47,8 @@ export default function Sidebar({
     { id: 'topic-clustering', label: 'Topic Clustering Hub', icon: Cpu },
     { id: 'content-generator', label: 'AI Blog Writer', icon: FileText },
     { id: 'autonomous-agents', label: 'Autonomous AI Agents', icon: Bot },
+    { id: 'schema-suite', label: 'Google Rich Snippets', icon: Code },
+    { id: 'monetization', label: 'Client ROI & Proposals', icon: Coins },
     { id: 'settings', label: 'API & Settings', icon: Settings }
   ];
 
@@ -59,16 +63,16 @@ export default function Sidebar({
         <div className={`p-5 border-b flex items-center gap-3 ${
           isDarkMode ? 'border-slate-800' : 'border-slate-100'
         }`}>
-          <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
             <Flame className="w-5 h-5 text-white" />
           </div>
-          <div>
-            <h1 className={`text-base font-sans font-bold leading-tight select-none ${
-              isDarkMode ? 'text-white' : 'text-slate-900'
+          <div className="min-w-0">
+            <h1 className={`text-xs font-sans font-extrabold leading-tight tracking-wider select-none truncate ${
+              isDarkMode ? 'text-indigo-400' : 'text-indigo-900'
             }`}>
-              SEO.ai
+              MS INTERIOR
             </h1>
-            <span className="text-[10px] uppercase font-mono tracking-wider font-semibold text-slate-500">SaaS Suite v3.2</span>
+            <span className="text-[9px] uppercase font-mono tracking-widest font-extrabold text-slate-500 block">DECORATION</span>
           </div>
         </div>
 
@@ -152,12 +156,8 @@ export default function Sidebar({
             )}
           </button>
 
-          <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold leading-none ${
-            userSession.tier === 'Enterprise' 
-              ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20' 
-              : 'bg-teal-500/10 text-teal-400 border border-teal-500/25'
-          }`}>
-            {userSession.tier}
+          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold leading-none bg-indigo-505/10 text-indigo-400 border border-indigo-500/20">
+            EXECUTIVE ACCESS
           </span>
         </div>
 

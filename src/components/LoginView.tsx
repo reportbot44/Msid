@@ -9,7 +9,7 @@ interface LoginViewProps {
 export default function LoginView({ onLoginSuccess }: LoginViewProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [tier, setTier] = useState<'Pro' | 'Enterprise'>('Pro');
+  const [tier, setTier] = useState<'Pro' | 'Enterprise'>('Enterprise');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,14 +22,14 @@ export default function LoginView({ onLoginSuccess }: LoginViewProps) {
     setError('');
     setIsLoading(true);
 
-    // Simulate authentic SaaS security tokens
+    // Simulate authentic security tokens
     setTimeout(() => {
       setIsLoading(false);
       onLoginSuccess({
         isLoggedIn: true,
         email: email,
-        tier: tier,
-        domain: 'my-saas-platform.com'
+        tier: 'Enterprise',
+        domain: 'msinteriordecorator.in'
       });
     }, 1200);
   };
@@ -37,9 +37,9 @@ export default function LoginView({ onLoginSuccess }: LoginViewProps) {
   const handleDemoLogin = () => {
     onLoginSuccess({
       isLoggedIn: true,
-      email: 'growth-officer@seo-agency.io',
+      email: 'corporate@msinteriordecorator.in',
       tier: 'Enterprise',
-      domain: 'my-saas-platform.com'
+      domain: 'msinteriordecorator.in'
     });
   };
 
@@ -55,15 +55,15 @@ export default function LoginView({ onLoginSuccess }: LoginViewProps) {
         <div id="login-marketing" className="md:col-span-7 flex flex-col justify-center space-y-6 md:pr-4">
           <div className="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 text-teal-400 px-3 py-1.5 rounded-full text-xs font-mono font-medium tracking-tight">
             <Cpu className="w-4 h-4 text-teal-400" />
-            <span>Autonomous SEO Copilot v3.2</span>
+            <span>MS INTERIOR DECORATION Private Suite</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-sans font-medium tracking-tight text-white leading-tight">
-            Supercharge Search Traffic with <span className="text-gradient bg-gradient-to-r from-teal-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">Autonomous AI Content Loop</span>
+            Dominate Search Metrics with <span className="text-gradient bg-gradient-to-r from-teal-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent font-extrabold">Autonomous SEO Loops</span>
           </h1>
 
           <p className="text-slate-400 text-sm max-w-lg leading-relaxed">
-            Uncover high-volume semantic topic clusters, analyze competitor rank gaps, and let AI agents continuously research, optimize, and schedule blog content directly into your CMS.
+            Uncover high-volume semantic topics, analyze competitor rank niches, and let AI agents continuously research, optimize, and organize interior decor and home remodeling authority silos.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
@@ -121,34 +121,11 @@ export default function LoginView({ onLoginSuccess }: LoginViewProps) {
               />
             </div>
 
-            <div className="space-y-1.5">
-              <label htmlFor="tier" className="text-xs font-medium text-slate-300">Subscription Tier</label>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  id="tier-pro"
-                  type="button"
-                  onClick={() => setTier('Pro')}
-                  className={`py-1.5 px-3 rounded-lg border text-xs font-medium transition-all ${
-                    tier === 'Pro'
-                      ? 'bg-teal-500/10 border-teal-500 text-teal-400'
-                      : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-300'
-                  }`}
-                >
-                  Pro (SaaS Limit)
-                </button>
-                <button
-                  id="tier-enterprise"
-                  type="button"
-                  onClick={() => setTier('Enterprise')}
-                  className={`py-1.5 px-3 rounded-lg border text-xs font-medium transition-all ${
-                    tier === 'Enterprise'
-                      ? 'bg-indigo-500/10 border-indigo-500 text-indigo-400'
-                      : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-300'
-                  }`}
-                >
-                  Enterprise (Unlimited)
-                </button>
-              </div>
+            <div className="space-y-1.5 font-mono">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Authorized Workspace:</span>
+              <span className="text-xs text-indigo-400 font-extrabold block bg-slate-950 border border-slate-800/80 p-2.5 rounded-lg">
+                ★ MS INTERIOR DECORATION PRIVATE CLUSTER
+              </span>
             </div>
 
             <button
@@ -168,21 +145,7 @@ export default function LoginView({ onLoginSuccess }: LoginViewProps) {
             </button>
           </form>
 
-          <div className="relative flex py-2 items-center">
-            <div className="flex-grow border-t border-slate-800" />
-            <span className="flex-shrink mx-3 text-[10px] text-slate-500 uppercase font-bold tracking-wider">Playground Demo Sandbox</span>
-            <div className="flex-grow border-t border-slate-800" />
-          </div>
-
-          <button
-            id="demo-access-btn"
-            type="button"
-            onClick={handleDemoLogin}
-            className="w-full py-2 bg-slate-950 hover:bg-slate-900 border border-slate-850 text-slate-200 font-sans font-medium rounded-lg text-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <Sparkles className="w-4 h-4 text-emerald-400 animate-pulse" />
-            <span>Instant Demo Access (Skip Setup)</span>
-          </button>
+          {/* Demo access divider and button removed */}
         </div>
 
       </div>

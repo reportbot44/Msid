@@ -71,6 +71,46 @@ export default function DashboardView({ db, isDarkMode, onFixIssue, setTab }: Da
         </div>
       </div>
 
+      {/* Advanced Organic SEO & Client Expansion Banner */}
+      <div className={`p-4 rounded-xl border relative overflow-hidden transition-all hover:shadow-lg ${
+        isDarkMode 
+          ? 'bg-gradient-to-r from-indigo-950/20 via-slate-900/40 to-emerald-950/10 border-indigo-500/35' 
+          : 'bg-gradient-to-r from-indigo-50/40 to-emerald-50/20 border-indigo-152'
+      }`}>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+          <div className="space-y-1">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[9px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-1.5 py-0.5 rounded font-mono font-bold tracking-tight">EXECUTIVE CONSOLE ACTIVE</span>
+              <span className="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-1.5 py-0.5 rounded font-mono font-bold tracking-tight">AUTO-MARKUP ACTIVE</span>
+            </div>
+            <h3 className={`text-xs uppercase font-mono tracking-wider font-extrabold ${isDarkMode ? 'text-slate-205' : 'text-slate-805'}`}>
+              Bespoke Interior & Home Decor Search Acceleration
+            </h3>
+            <p className="text-[11px] text-slate-400 leading-normal max-w-3xl">
+              Equip your corporate home styling partners with high-integrity Google Rich Snippets structured scripts, and compile bespoke organic growth blueprints presenting exact ROI forecasts relative to expensive PPC bidding pipelines.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2.5 self-start md:self-auto shrink-0">
+            <button
+              onClick={() => setTab('schema-suite')}
+              className="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition-all shadow-md cursor-pointer"
+            >
+              Rich Snippets Master
+            </button>
+
+            <button
+              onClick={() => setTab('monetization')}
+              className={`px-3 py-1.5 border text-xs font-bold rounded-lg transition-all cursor-pointer ${
+                isDarkMode ? 'bg-[#0a0c10] border-slate-800 text-slate-300 hover:text-white' : 'bg-white border-slate-205 text-slate-705 hover:bg-slate-50'
+              }`}
+            >
+              Client ROI Blueprint
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Grid of 4 Key Analytics Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Impressions Card */}

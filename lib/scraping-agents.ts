@@ -158,6 +158,39 @@ export async function scrapeUrl(url: string, respectRobots = true): Promise<Scra
       .slice(0, 10)
       .map(entry => entry[0]);
 
+    // --- Specialize for Interior Design & Home Decor Industry Heuristics ---
+    const lowerContent = (title + " " + cleanContent).toLowerCase();
+    
+    // Heuristic room categories matching
+    const roomCategoriesPool = [
+      "Living Room", "Bedroom", "Kitchen", "Bathroom", "Dining Room", 
+      "Home Office", "Outdoor", "Nursery", "Entryway", "Walk-In Closet"
+    ];
+    const roomCategories = roomCategoriesPool.filter(room => 
+      lowerContent.includes(room.toLowerCase()) || 
+      (room === "Home Office" && lowerContent.includes("office")) ||
+      (room === "Outdoor" && (lowerContent.includes("outdoor") || lowerContent.includes("patio") || lowerContent.includes("garden")))
+    );
+
+    // Heuristic product data matching
+    const productPool = [
+      "Sofa", "Accent Chair", "Dining Table", "Pendant Light", "Area Rug",
+      "Credenza", "Coffee Table", "Wallpaper", "Chandelier", "Throw Pillows", 
+      "Window Drapes", "Wall Sconce", "Console Table", "Bar Stools", "Floor Lamp"
+    ];
+    const productData = productPool.filter(prod => lowerContent.includes(prod.toLowerCase()));
+
+    // Heuristic design trends matching
+    const trendsPool = [
+      "Japandi", "Biophilic", "Mid-Century Modern", "Warm Minimalism", 
+      "Modern Farmhouse", "Art Deco", "Industrial Chic", "Grandmillennial", 
+      "Earth Tone", "Moody Transitional", "Rustic Modern"
+    ];
+    const designTrends = trendsPool.filter(trend => {
+      const parts = trend.split(" ");
+      return parts.some(p => p.length > 4 && lowerContent.includes(p.toLowerCase())) || lowerContent.includes(trend.toLowerCase());
+    });
+
     return {
       url,
       title,
@@ -170,7 +203,10 @@ export async function scrapeUrl(url: string, respectRobots = true): Promise<Scra
       schemaMarkup,
       faqs,
       status: 'success',
-      scrapedAt
+      scrapedAt,
+      roomCategories: roomCategories.length > 0 ? roomCategories : ["Living Room", "Bedroom"], // Default design placeholders if none found
+      productData: productData.length > 0 ? productData : ["Sofa", "Pendant Light"],
+      designTrends: designTrends.length > 0 ? designTrends : ["Warm Minimalism", "Japandi"]
     };
 
   } catch (err: any) {
@@ -188,7 +224,10 @@ export async function scrapeUrl(url: string, respectRobots = true): Promise<Scra
       faqs: [],
       status: 'failed',
       errorMessage: err.message || "Network isolation time-out.",
-      scrapedAt
+      scrapedAt,
+      roomCategories: [],
+      productData: [],
+      designTrends: []
     };
   }
 }
@@ -410,23 +449,24 @@ export async function runAICompetitorAnalysisAgent(domain: string, matchedScrape
 
   // Map words
   const contentSeed = matchedScrapes.map(s => s.contentExcerpt).join(" ").substring(0, 4000);
-  let strategyAssessment = "Competitor relies heavily on structural programmatic clusters to claim transactional search nodes.";
+  let strategyAssessment = "Competitor targets premium mid-century modern furniture search intents, utilizing high-quality room category images and biophilic trend landing clusters to capture transaction-ready buyers.";
   let topCompetitorKeywords = [
-    { keyword: "ranking telemetry dashboard", density: 1.8, frequency: 12 },
-    { keyword: "automation index metrics", density: 1.4, frequency: 9 },
-    { keyword: "crawler latency", density: 1.1, frequency: 6 }
+    { keyword: "mid century modern living room lookbook", density: 1.8, frequency: 12 },
+    { keyword: "japandi minimalism styled dining table", density: 1.4, frequency: 9 },
+    { keyword: "biophilic design bedroom style tips", density: 1.1, frequency: 6 }
   ];
 
   if (process.env.GEMINI_API_KEY) {
     try {
-      const prompt = `You are a professional Competitor SEO Analysis Agent. Evaluate the content parsed from URL crawls of: "${domain}".
+      const prompt = `You are a professional Competitor SEO Analysis Agent specializing in the Interior Design & Home Decor industry. 
+Evaluate the content parsed from URL crawls of: "${domain}".
 Raw aggregate Content Dump:
 ${contentSeed}
 
 Evaluate:
-1. The primary structural theme or vertical (e.g., developer framework, SaaS provider, marketplace portal).
-2. Assessment outline of their marketing strategy type (Content-Focused, Technical, Backlink Heavy, and why).
-3. The top 3 recurring topical entities inside.
+1. The primary architectural theme, room style, or furniture design vertical (e.g., Living Room, Coastal Boho, Mid-Century Modern, Japandi).
+2. Assessment outline of their marketing strategy type (e.g., Image-Heavy Trend Blog, Pinterest Traffic Funnel, Product Schema SEO, and why).
+3. The top 3 recurring design entities or room categories.
 
 Output structured JSON:
 {
@@ -501,13 +541,14 @@ export async function runAIKeywordExtractionAgent(scraped: ScrapeResult): Promis
 
   if (process.env.GEMINI_API_KEY && scraped.status === "success") {
     try {
-      const prompt = `You are a Keyword Extraction Agent. Map latent organic semantic keywords (LSI keywords) based on this text scraped from: "${scraped.url}".
+      const prompt = `You are an AI Keyword Extraction Agent specializing in the Interior Design, Furniture, Accessories, and Home Decor styling sector.
+Map latent organic semantic keywords (LSI keywords) based on this text scraped from: "${scraped.url}".
 Text body:
 ${bodyText}
 
-List up to 5 strategic high-volume keywords with SEO search metrics parameters.
+List up to 5 strategic high-volume keywords with SEO search metrics parameters. Specialize in search intent mapping for bedrooms, kitchens, biophilic design, furniture items, or trends.
 Metric properties:
-- Keyword: lower-cased semantic text phrase
+- Keyword: lower-cased semantic text phrase (e.g., 'warm minimalist bedroom layout', 'rattan pendant light shade')
 - Intent: 'informational' or 'transactional' or 'commercial'
 - Difficulty: integer 0-100 indicating search competitiveness
 - Volume: realistic monthly organic queries volume (e.g., 200 to 5000)
@@ -546,13 +587,17 @@ Return strict JSON array of objects format:
     }
   }
 
-  // Fallback heuristic extraction
+  // Fallback heuristic extraction specialized for Interior design / Home decor
   return scraped.keywords.slice(0, 3).map(kw => ({
     keyword: kw,
     intent: "informational",
     volume: Math.floor(Math.random() * 800) + 150,
     difficulty: Math.floor(Math.random() * 35) + 20
-  }));
+  })).concat([
+    { keyword: "interior design room planner free", intent: "commercial", volume: 4500, difficulty: 58 },
+    { keyword: "best boho living room decor options", intent: "transactional", volume: 1800, difficulty: 35 },
+    { keyword: "biophilic design bedroom layout trends", intent: "informational", volume: 1200, difficulty: 28 }
+  ]);
 }
 
 /**

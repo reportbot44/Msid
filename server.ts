@@ -24,6 +24,17 @@ import { initBackgroundAutomation, autoTriggerCompleteSEOCompanyFlow } from "./l
 import { generateStaticCMSFiles } from "./workers/publisher";
 import { getQueueStatus, clearCompletedJobs, resetFailedJobs, enqueueJob } from "./queues/index";
 import { scrapeUrl, runAISEOAuditAgent, runAICompetitorAnalysisAgent, executeCrawlJob } from "./lib/scraping-agents";
+import { 
+  enforceHttps, 
+  setSecureHeaders, 
+  rateLimiter, 
+  clientWafMiddleware, 
+  antiCsrfMiddleware, 
+  validateScrapeRequest, 
+  secureAdminRoute,
+  loadSecurityLogs,
+  logSecurityEvent
+} from "./lib/security-engine";
 
 dotenv.config();
 
@@ -146,7 +157,45 @@ async function startServer() {
 
   app.use(express.json());
 
+  // --- Production Security Protections (Cloudflare Alignments) ---
+  app.use(enforceHttps);
+  app.use(setSecureHeaders);
+  app.use(rateLimiter);
+  app.use(clientWafMiddleware);
+  app.use(antiCsrfMiddleware);
+  app.use(validateScrapeRequest);
+  app.use(secureAdminRoute);
+
   // --- API Endpoints ---
+
+  // Security Suite Log Feed
+  app.get("/api/security/logs", (req: Request, res: Response) => {
+    try {
+      const logs = loadSecurityLogs();
+      res.json({ success: true, logs });
+    } catch (err: any) {
+      res.status(500).json({ success: false, error: err.message });
+    }
+  });
+
+  // Simulated WAF attack trigger to allow the user to easily test their Cloudflare shield console!
+  app.post("/api/security/simulate", (req: Request, res: Response) => {
+    try {
+      const { violationType, clientIp, details } = req.body;
+      const logged = logSecurityEvent({
+        clientIp: clientIp || "3.235.101.44",
+        method: "POST",
+        path: "/api/db/save",
+        violationType: violationType || "WAF_SQLI",
+        severity: violationType === "WAF_SQLI" ? "critical" : violationType === "RATE_LIMIT" ? "high" : "medium",
+        userAgent: req.headers["user-agent"] || "Mozilla/5.0 SecurityScanner/1.0",
+        details: details || `Simulated Cloudflare Edge Block: Filtered suspicious string sequence.`
+      });
+      res.json({ success: true, logged });
+    } catch (err: any) {
+      res.status(500).json({ success: false, error: err.message });
+    }
+  });
 
   // 1. Get current DB state
   app.get("/api/db", (req: Request, res: Response) => {
@@ -956,7 +1005,7 @@ Crafting detailed answers to conversational long-tail queries satisfies searcher
   app.post("/api/reports/generate", async (req: Request, res: Response) => {
     try {
       const { title, domain } = req.body;
-      const targetDomain = domain || "my-saas-platform.com";
+      const targetDomain = domain || "msinteriordecorator.in";
       const reportTitle = title || "SEO Performance Overview Index";
 
       const db = loadDb();

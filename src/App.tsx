@@ -12,6 +12,8 @@ import SettingsView from './components/SettingsView';
 import LoginView from './components/LoginView';
 import NotificationPanel from './components/NotificationPanel';
 import AnalyticsView from './components/AnalyticsView';
+import SchemaSuiteView from './components/SchemaSuiteView';
+import SaaSMonetizationView from './components/SaaSMonetizationView';
 import { initialDatabase } from './data';
 import { Sun, Moon, Sparkles, Laptop, X } from 'lucide-react';
 
@@ -20,8 +22,8 @@ export default function App() {
   const [session, setSession] = useState<UserSession>({
     isLoggedIn: false,
     email: null,
-    tier: 'Pro',
-    domain: 'my-saas-platform.com'
+    tier: 'Enterprise',
+    domain: 'msinteriordecorator.in'
   });
   const [db, setDb] = useState<DatabaseSchema>(initialDatabase);
   const [preselectedKeywords, setPreselectedKeywords] = useState<string[]>([]);
@@ -132,7 +134,10 @@ export default function App() {
     try {
       await fetch('/api/db/save', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-user-email': session.email || 'akexseni08@gmail.com'
+        },
         body: JSON.stringify({ db: updatedDb })
       });
     } catch (err) {
@@ -303,13 +308,13 @@ export default function App() {
   };
 
   const handleSignOutConsole = () => {
-    setSession({
-      isLoggedIn: false,
-      email: null,
-      tier: 'Pro',
-      domain: 'my-saas-platform.com'
-    });
-  };
+     setSession({
+       isLoggedIn: false,
+       email: null,
+       tier: 'Enterprise',
+       domain: 'msinteriordecorator.in'
+     });
+   };
 
   const handleKeywordSelectWriterTrigger = (kwName: string) => {
     setPreselectedKeywords([kwName]);
@@ -321,6 +326,10 @@ export default function App() {
 
   const toggleThemeMode = () => {
     setIsDarkMode(!isDarkMode);
+  };
+
+  const handleUpgradeTier = (tier: 'Free' | 'Pro' | 'Enterprise') => {
+    setSession(prev => ({ ...prev, tier }));
   };
 
   // Mark notification as read on server & client
@@ -438,7 +447,7 @@ export default function App() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-dashed border-slate-800/20">
           <div className="space-y-0.5">
             <div className="flex items-center gap-1.5 font-mono text-[9px] font-bold text-slate-500 uppercase tracking-widest">
-              <span>SaaS Platform Control Engine</span>
+              <span>MS INTERIOR DECORATION Enterprise Console</span>
               <span>/</span>
               <span className="text-indigo-400 font-extrabold">{tab} view</span>
             </div>
@@ -449,8 +458,10 @@ export default function App() {
               {tab === 'scraping-audit' && 'AI Crawler & Site Audits'}
               {tab === 'gap-analysis' && 'Competitor Content Gap'}
               {tab === 'topic-clustering' && 'Topical Schema Clustering'}
-              {tab === 'content-generator' && 'SaaS AI Article Generator'}
+              {tab === 'content-generator' && 'AI Article Generator'}
               {tab === 'autonomous-agents' && 'Sitemap Spider Agents'}
+              {tab === 'schema-suite' && 'Google Rich Snippets Schema Master'}
+              {tab === 'monetization' && 'Client ROI Blueprint'}
               {tab === 'settings' && 'Credentials Configure Core'}
             </h4>
           </div>
@@ -545,6 +556,22 @@ export default function App() {
               db={db} 
               isDarkMode={isDarkMode} 
               onSaveSettings={handleSaveSettings}
+            />
+          )}
+
+          {tab === 'schema-suite' && (
+            <SchemaSuiteView 
+              db={db} 
+              isDarkMode={isDarkMode} 
+            />
+          )}
+
+          {tab === 'monetization' && (
+            <SaaSMonetizationView 
+              db={db} 
+              isDarkMode={isDarkMode} 
+              userSession={session}
+              onUpgradeTier={handleUpgradeTier}
             />
           )}
         </div>

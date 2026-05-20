@@ -230,6 +230,9 @@ export interface ScrapeResult {
   status: 'success' | 'failed';
   errorMessage?: string;
   scrapedAt: string;
+  roomCategories?: string[];
+  productData?: string[];
+  designTrends?: string[];
 }
 
 export interface CrawlJob {

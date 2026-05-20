@@ -1,123 +1,148 @@
 import { DatabaseSchema, AnalyticsData } from './types';
 
 export const initialDatabase: DatabaseSchema = {
-  domain: "my-saas-platform.com",
+  domain: "msinteriordecorator.in",
   openaiKey: "",
   geminiModel: "gemini-3.5-flash",
   keywords: [
     {
       id: "kw-1",
-      keyword: "ai content optimization tool",
-      volume: 4800,
-      difficulty: 42,
-      intent: "commercial",
-      cpc: 3.45,
-      competition: "medium",
-      trend: [60, 65, 72, 80, 95, 100, 110, 115, 120, 118, 125, 130],
-      cluster: "AI content Generation"
+      keyword: "modular kitchen design ideas",
+      volume: 18500,
+      difficulty: 48,
+      intent: "informational",
+      cpc: 2.10,
+      competition: "high",
+      trend: [75, 80, 85, 90, 95, 100, 110, 120, 125, 130, 135, 140],
+      cluster: "Modular Kitchens"
     },
     {
       id: "kw-2",
-      keyword: "what is semantic seo",
-      volume: 8500,
-      difficulty: 28,
-      intent: "informational",
-      cpc: 1.20,
-      competition: "low",
-      trend: [80, 82, 85, 90, 88, 92, 95, 100, 102, 105, 112, 120],
-      cluster: "SEO Learning Hub"
+      keyword: "best home interior decorators in Bangalore",
+      volume: 8200,
+      difficulty: 35,
+      intent: "transactional",
+      cpc: 4.50,
+      competition: "medium",
+      trend: [80, 85, 90, 88, 92, 95, 100, 105, 110, 115, 120, 122],
+      cluster: "Local Agency Services"
     },
     {
       id: "kw-3",
-      keyword: "best programmatic seo dashboard",
-      volume: 1200,
-      difficulty: 64,
-      intent: "transactional",
-      cpc: 8.50,
-      competition: "high",
-      trend: [20, 35, 40, 50, 55, 62, 70, 75, 82, 88, 95, 100],
-      cluster: "Programmatic SEO"
+      keyword: "modern small living room decor",
+      volume: 14200,
+      difficulty: 26,
+      intent: "informational",
+      cpc: 1.15,
+      competition: "low",
+      trend: [90, 92, 95, 100, 102, 108, 112, 115, 118, 120, 124, 130],
+      cluster: "Living Room Styling"
     },
     {
       id: "kw-4",
-      keyword: "competitor content gap analyzer",
-      volume: 2400,
-      difficulty: 38,
+      keyword: "bedroom wardrobe design photo",
+      volume: 11000,
+      difficulty: 31,
       intent: "commercial",
-      cpc: 4.10,
+      cpc: 1.80,
       competition: "medium",
-      trend: [70, 72, 75, 78, 80, 82, 85, 90, 92, 95, 98, 100],
-      cluster: "Competitor Intelligence"
+      trend: [70, 72, 75, 78, 80, 85, 90, 95, 98, 100, 105, 110],
+      cluster: "Bedroom Furniture"
     },
     {
       id: "kw-5",
-      keyword: "automated blog scheduler",
-      volume: 3200,
-      difficulty: 51,
-      intent: "transactional",
-      cpc: 5.80,
-      competition: "high",
+      keyword: "modern false ceiling designs",
+      volume: 9500,
+      difficulty: 22,
+      intent: "informational",
+      cpc: 0.90,
+      competition: "low",
       trend: [50, 55, 58, 62, 70, 75, 78, 82, 85, 90, 95, 100],
-      cluster: "SEO Automation"
+      cluster: "Ceiling Layouts"
+    },
+    {
+      id: "kw-6",
+      keyword: "u-shaped modular kitchen layout trends",
+      volume: 4200,
+      difficulty: 29,
+      intent: "informational",
+      cpc: 1.60,
+      competition: "low",
+      trend: [30, 35, 38, 42, 45, 50, 55, 60, 65, 70, 75, 80],
+      cluster: "Modular Kitchens"
+    },
+    {
+      id: "kw-7",
+      keyword: "affordable living room decorators near me",
+      volume: 3800,
+      difficulty: 32,
+      intent: "transactional",
+      cpc: 3.80,
+      competition: "medium",
+      trend: [40, 42, 45, 48, 50, 55, 60, 65, 70, 75, 82, 90],
+      cluster: "Local Agency Services"
     }
   ],
   posts: [
     {
       id: "post-1",
-      title: "The Ultimate Guide to Semantic SEO Optimization in 2026",
-      slug: "ultimate-guide-semantic-seo-2026",
-      excerpt: "Learn how modern search engines understand context, entity relationships, and conversational search intent to outrank traditional keyword matching.",
-      content: `# The Ultimate Guide to Semantic SEO Optimization in 2026
+      title: "10 Elegant Modern Living Room Design Ideas for Indian Homes",
+      slug: "modern-living-room-ideas-indian-homes",
+      excerpt: "Explore space-saving, aesthetically stunning layouts, warm wooden materials, and contemporary lighting plans that transform small and large Indian living spaces.",
+      content: `# 10 Elegant Modern Living Room Design Ideas for Indian Homes
 
-Modern search engines are no longer just simple keyword matchers. They are advanced contextual semantic understanding engines.
+Planning the layout, color palette, and decorative items of a living room is central to establishing the overall mood. Modern Indian homes frequently combine functional minimalist elements with rich cultural touchpoints.
 
-## What is Semantic SEO?
+## 1. Minimalist Jute & Wood Combinations
+Utilizing natural, eco-friendly materials such as biophilic jute rugs, linen couches, and premium solid teak wood furniture. This helps make the space feel light and airy.
 
-Semantic SEO is the process of optimizing web pages around whole topics rather than single density-specific keywords. By targeting entity relationships, topical depth, and structured schema markup, you help search engines grasp the comprehensive context of your domain.
+## 2. Low-Profile Seating Layouts
+To make compact apartments feel larger, opt for sleek, low-profile sofas or modern diwan setups. Raising furniture off the floor with exposed slim legs allow natural light to travel across the floor, maximizing the illusion of space.
 
-### Why Entities Matter More Than Keywords
+## 3. Play with Texture and Accent Walls
+Add visual rhythm using wooden rafters, subtle textured wallpapers, or warm neutral brick finishes rather than overwhelming colors.
 
-1. **Context Over Frequency:** Search engines map words to a real-world Knowledge Graph.
-2. **Intent Matching:** Designing for the distinct phases of user learning.
-3. **Structured Content Gaps:** Meeting competitor topics comprehensively.
+To optimize your search engine positions, ensure to integrate **modern small living room decor** elements perfectly into your headings.
 
-### Core Implementation Framework
-
-Ensure that you introduce **structured table schemas**, entity relationships, and schema graphs directly in your layouts. This signals authority and satisfies modern generative engines.`,
-      metaTitle: "Ultimate Guide to Semantic SEO in 2026 | SEO Copilot",
-      metaDescription: "Master contextual search, Knowledge Graphs, and topical entity matching to skyrocket your modern SEO campaign.",
-      keywordsUsed: ["what is semantic seo", "ai content optimization tool"],
+### Core Selection Tips:
+1. Prefer multi-functional storage tables.
+2. Maximize natural daylight placement.
+3. Incorporate warm, comforting LED spotlight structures.`,
+      metaTitle: "10 Elegant Indian Living Room Designs | MS Interior Decorator",
+      metaDescription: "Transform your home with elegant living room layouts. Discover smart storage, high contrast themes, and modern small living room decor tips.",
+      keywordsUsed: ["modern small living room decor"],
       status: "published",
-      wordCount: 1540,
-      readTime: 6,
-      seoScore: 94,
+      wordCount: 1220,
+      readTime: 5,
+      seoScore: 96,
       authorType: "AI Agent",
       createdAt: "2026-05-18T14:32:00Z"
     },
     {
       id: "post-2",
-      title: "Why Dynamic Programmatic SEO is the Tech Pivot of the Decade",
-      slug: "programmatic-seo-tech-pivot",
-      excerpt: "How automated, database-driven landing pages are turning startup SEO into a quantitative mathematical game.",
-      content: `# why Dynamic Programmatic SEO is the Tech Pivot of the Decade
+      title: "How to Choose the Perfect Modular Kitchen Design for Small Spaces",
+      slug: "small-modular-kitchen-spaces-guide",
+      excerpt: "The ultimate spatial architectural playbook for optimizing narrow kitchen units with multi-tiered drawers, sleek tall pantries, and U-shaped configurations.",
+      content: `# How to Choose the Perfect Modular Kitchen Design for Small Spaces
 
-In a world where speed determines survival, manual single-page blog generation cannot keep pace with dynamic long-tail intent. Enter **Programmatic SEO**.
+A modular kitchen isn't just a style statement—it’s a masterclass in spatial efficiency. For compact apartments, choosing the right material, cabinetry sizes, and workflow layout is critical to prevent cooking clutter.
 
-## The Automation Playbook
+## The Gold Standard Kitchen Work Triangle
+Ensure seamless accessibility between your sink, cooking stove, and refrigeration unit. Minimizing steps here leads to ergonomic kitchen routines.
 
-Startups are generating thousands of hyper-focused, structurally perfect pages programmatically using real data sources.
+- **U-Shaped Layouts:** Excellent for continuous slab designs and corner cabinet optimization.
+- **Straight Single-Wall Layouts:** Ideal for narrow studio workflows.
+- **L-Shaped Configurations:** The absolute favorites for open-concept dining combos.
 
-- **Fast Indexation:** Google values robust, data-dense pages.
-- **Micro-Targeting:** Bending the long-tail keywords to your advantage.
-- **Dynamic Content Insertion:** Updating metrics programmatically to maintain high content fresh scores.`,
-      metaTitle: "Programmatic SEO: The Quantitative Playbook | Tech Insight",
-      metaDescription: "How startups are automating top-of-funnel directories and database-driven landing pages to capture long-tail growth.",
-      keywordsUsed: ["best programmatic seo dashboard"],
+Optimize cabinet utility using hydraulic lift-up shutters, multi-tier carousel trays for hard-to-reach corner spaces, and soft-closing drawer channels. Including **modular kitchen design ideas** guides will establish high-intent customer queries easily.`,
+      metaTitle: "Modular Kitchen Guide for Small Indian Homes | Interior Planning",
+      metaDescription: "Struggling with cooking spaces? Discover expert tips on modular kitchen design ideas, ergonomic layouts, and smart modern storage pantries.",
+      keywordsUsed: ["modular kitchen design ideas"],
       status: "scheduled",
       scheduledFor: "2026-05-22T09:00:00Z",
-      wordCount: 1120,
-      readTime: 4,
-      seoScore: 88,
+      wordCount: 1350,
+      readTime: 6,
+      seoScore: 92,
       authorType: "AI Agent",
       createdAt: "2026-05-19T08:15:00Z"
     }
@@ -125,97 +150,97 @@ Startups are generating thousands of hyper-focused, structurally perfect pages p
   agents: [
     {
       id: "agent-1",
-      name: "Core Tech Blog Agent",
-      purpose: "Automated high-quality technical blog generation targeting developer and SaaS SEO keyword listings.",
-      targetKeywords: ["ai content optimization tool", "what is semantic seo"],
-      voiceTone: "professional",
+      name: "Residential Trends Auto-Writer",
+      purpose: "Generates high-intent localized blog layouts targeting Indian residential interior design, bedroom storage, and living room keywords.",
+      targetKeywords: ["modern small living room decor", "bedroom wardrobe design photo"],
+      voiceTone: "creative",
       frequency: "daily",
       status: "active",
       lastRun: "2026-05-19T14:30:00Z",
       nextRun: "2026-05-20T14:30:00Z",
-      topicHub: "Core AI Marketing",
-      generatedCount: 15
+      topicHub: "Home Decors & Styling",
+      generatedCount: 18
     },
     {
       id: "agent-2",
-      name: "Long-Tail Intent Harvester",
-      purpose: "Discovers low-difficulty transactional and commercial customer queries and designs optimized landing pages.",
-      targetKeywords: ["competitor content gap analyzer", "automated blog scheduler"],
-      voiceTone: "creative",
+      name: "Modular Layout Trend Monitor",
+      purpose: "Analyzes competitor kitchen catalogs and drafts technical SEO resources targeting modern kitchen finishes and fittings.",
+      targetKeywords: ["modular kitchen design ideas", "u-shaped modular kitchen layout trends"],
+      voiceTone: "professional",
       frequency: "weekly",
       status: "paused",
       lastRun: "2026-05-15T09:00:00Z",
       nextRun: "2026-05-22T09:00:00Z",
-      topicHub: "Competitor Conquest",
-      generatedCount: 6
+      topicHub: "Modular Kitchen Mastery",
+      generatedCount: 9
     }
   ],
   clusters: [
     {
       id: "clus-1",
-      name: "AI Content Automation Hub",
-      volume: 12500,
+      name: "Modular Kitchen Engineering",
+      volume: 22700,
       mainIntent: "commercial",
-      keywordsCount: 4,
-      keywords: ["ai content optimization tool", "automated blog scheduler", "ai article generation editor", "saas content scheduler"],
-      pillarTopic: "Programmatic AI SEO strategies for scale",
-      description: "Optimizing top-of-funnel creation using natural language processing engines to meet informational intent rapidly."
+      keywordsCount: 2,
+      keywords: ["modular kitchen design ideas", "u-shaped modular kitchen layout trends"],
+      pillarTopic: "Ergonomic & Space-Saving Modern Cooking Layouts",
+      description: "Covering structural kitchen materials, acrylic vs laminate finishes, chimney heights, and multi-tier wire basket organization ideas for high-end homes."
     },
     {
       id: "clus-2",
-      name: "Competitor SEO Intelligence",
-      volume: 6800,
-      mainIntent: "commercial",
+      name: "Residential Interior Aesthetics",
+      volume: 37000,
+      mainIntent: "informational",
       keywordsCount: 3,
-      keywords: ["competitor content gap analyzer", "seo content gaps analysis tool", "how to map competitor keyterms"],
-      pillarTopic: "Uncovering and dominating search engine gaps",
-      description: "Analytical strategies using search data to target queries where competitors are weak or unindexed."
+      keywords: ["modern small living room decor", "bedroom wardrobe design photo", "modern false ceiling designs"],
+      pillarTopic: "Contemporary Indian Apartment Makeover Guides",
+      description: "Focusing on low-budget modifications, false ceiling styling, bedroom woodwork, wardrobe storage layout photos, and cozy space styling tips."
     }
   ],
   gaps: [
     {
       id: "gap-1",
-      competitorUrl: "hubtrack.io",
-      targetUrl: "my-saas-platform.com",
-      keyword: "saas automated backlinking dashboard",
+      competitorUrl: "livspace.com",
+      targetUrl: "msinteriordecorator.in",
+      keyword: "u-shaped modular kitchen layout trends",
       competitorRank: 3,
       yourRank: "unindexed",
-      gapVolume: 1800,
-      difficulty: 45,
-      recommendation: "Generate a targeted comparative breakdown page comparing HubSpot solutions with our programmatic indexers."
+      gapVolume: 4200,
+      difficulty: 29,
+      recommendation: "Write an exhaustive structural index page covering U-shaped layouts, dynamic tall-unit pantry systems, and premium profile handles."
     },
     {
       id: "gap-2",
-      competitorUrl: "seo-giant-com",
-      targetUrl: "my-saas-platform.com",
-      keyword: "keyword cluster mapping generator",
+      competitorUrl: "homelane.com",
+      targetUrl: "msinteriordecorator.in",
+      keyword: "affordable living room decorators near me",
       competitorRank: 5,
-      yourRank: 48,
-      gapVolume: 3400,
+      yourRank: 42,
+      gapVolume: 3800,
       difficulty: 32,
-      recommendation: "Create a rich Topic Cluster landing hub with dynamic visualization components to outclass competitor static charts."
+      recommendation: "Develop a city-specific Local Landings program. Build neighborhood interior decoration galleries with clear transparent Indian pricing structures."
     }
   ],
   issues: [
     {
       id: "issue-1",
-      title: "Missing Structured Schema Graf.json on Core Landing Pages",
+      title: "Missing LocalBusiness & Service Schema structured markup on Homepage",
       category: "critical",
-      description: "Search engines are struggling to tie product entities correctly. Missing JSON-LD WebSite and SoftwareApplication schemas.",
+      description: "Google crawlers cannot correlate target local services. Missing LocalBusiness schema, office address location, and phone tags.",
       status: "pending"
     },
     {
       id: "issue-2",
-      title: "Crawl-Rate Limit Warning (Sitemap Index Size)",
+      title: "Missing ALT tags on 42 Living Room Portfolio images",
       category: "warning",
-      description: "Sitemap contains duplicate redirection URLs which will deplete budget indexes on deep content crawls.",
+      description: "Important image showcases (living room, high quality kitchens) have default or empty alt attributes. Missing image SEO relevance weights.",
       status: "pending"
     },
     {
       id: "issue-3",
-      title: "Optimize Image ALT Text on Product Features",
+      title: "Optimized XML sitemap including indexable kitchen designs tags",
       category: "info",
-      description: "Feature showcase images have default empty descriptions. Update to semantic screen-reader friendly strings.",
+      description: "Added dedicated modular and wardrobe catalog pages to the sitemap file manually. Google indexed all 5 new categories.",
       status: "fixed"
     }
   ],
@@ -223,32 +248,32 @@ Startups are generating thousands of hyper-focused, structurally perfect pages p
     {
       id: "notif-1",
       type: "content_generation",
-      title: "AI Generation Successful",
-      message: "Autonomous agent 'Core Tech Blog Agent' has generated and published 'The Ultimate Guide to Semantic SEO' with a score of 94/100.",
+      title: "Residential Trends Auto-Writer Success",
+      message: "Agent 'Residential Trends Auto-Writer' generated and published '10 Elegant Modern Living Room Design Ideas' targeting Indian homes, scoring 96/100.",
       isRead: false,
       createdAt: "2026-05-19T14:32:00Z"
     },
     {
       id: "notif-2",
       type: "ranking_change",
-      title: "Google Ranking Jump!",
-      message: "Your keyword 'best programmatic seo dashboard' moved from rank #34 to #12 (+22 spots) following meta optimization.",
+      title: "Google Ranking High-Jump!",
+      message: "Your primary keyword 'modern false ceiling designs' leaped from position #31 to #4 (+27 positions) thanks to semantic schema inclusions.",
       isRead: false,
       createdAt: "2026-05-18T10:15:00Z"
     },
     {
       id: "notif-3",
       type: "opportunity",
-      title: "High Value Keyword Gap Discovered",
-      message: "Competitor 'hubtrack.io' ranks #3 for 'saas automated backlinking dashboard' with monthly volume 1,800. We are currently unindexed.",
+      title: "High Value Kitchen Keyword Gap Scoped",
+      message: "Competitor 'livspace.com' ranks #3 for 'u-shaped modular kitchen layout trends' (Volume: 4,200). We are currently unindexed on this key query.",
       isRead: true,
       createdAt: "2026-05-17T08:00:00Z"
     },
     {
       id: "notif-4",
       type: "system_alert",
-      title: "Technical SEO Audit Done",
-      message: "Crawl complete. We detected 1 critical schema issue (Missing JSON-LD structured schema on landing pages) and 1 warning.",
+      title: "Technical Site Audit Completed",
+      message: "Deep crawl on msinteriordecorator.in detected 1 critical issue (Missing LocalBusiness & Service schemas) and 42 portfolio image schema warnings.",
       isRead: true,
       createdAt: "2026-05-16T11:45:00Z"
     }
@@ -256,149 +281,149 @@ Startups are generating thousands of hyper-focused, structurally perfect pages p
   rankings: [
     {
       id: "rank-1",
-      keyword: "ai content optimization tool",
-      searchVolume: 4800,
-      currentRank: 8,
-      prevRank: 14,
-      difficulty: 42,
-      history: [
-        { date: "May 13", rank: 16 },
-        { date: "May 14", rank: 14 },
-        { date: "May 15", rank: 14 },
-        { date: "May 16", rank: 12 },
-        { date: "May 17", rank: 11 },
-        { date: "May 18", rank: 9 },
-        { date: "May 19", rank: 8 },
-        { date: "May 20", rank: 8 }
-      ]
-    },
-    {
-      id: "rank-2",
-      keyword: "what is semantic seo",
-      searchVolume: 8500,
+      keyword: "modern false ceiling designs",
+      searchVolume: 9500,
       currentRank: 4,
-      prevRank: 5,
-      difficulty: 28,
+      prevRank: 31,
+      difficulty: 22,
       history: [
-        { date: "May 13", rank: 7 },
-        { date: "May 14", rank: 7 },
-        { date: "May 15", rank: 6 },
-        { date: "May 16", rank: 5 },
-        { date: "May 17", rank: 5 },
-        { date: "May 18", rank: 5 },
+        { date: "May 13", rank: 31 },
+        { date: "May 14", rank: 31 },
+        { date: "May 15", rank: 28 },
+        { date: "May 16", rank: 18 },
+        { date: "May 17", rank: 12 },
+        { date: "May 18", rank: 8 },
         { date: "May 19", rank: 4 },
         { date: "May 20", rank: 4 }
       ]
     },
     {
-      id: "rank-3",
-      keyword: "best programmatic seo dashboard",
-      searchVolume: 1200,
-      currentRank: 12,
-      prevRank: 34,
-      difficulty: 64,
+      id: "rank-2",
+      keyword: "bedroom wardrobe design photo",
+      searchVolume: 11000,
+      currentRank: 6,
+      prevRank: 10,
+      difficulty: 31,
       history: [
-        { date: "May 13", rank: 36 },
-        { date: "May 14", rank: 35 },
-        { date: "May 15", rank: 34 },
-        { date: "May 16", rank: 34 },
-        { date: "May 17", rank: 28 },
-        { date: "May 18", rank: 21 },
-        { date: "May 19", rank: 14 },
-        { date: "May 20", rank: 12 }
+        { date: "May 13", rank: 10 },
+        { date: "May 14", rank: 10 },
+        { date: "May 15", rank: 9 },
+        { date: "May 16", rank: 8 },
+        { date: "May 17", rank: 8 },
+        { date: "May 18", rank: 7 },
+        { date: "May 19", rank: 6 },
+        { date: "May 20", rank: 6 }
+      ]
+    },
+    {
+      id: "rank-3",
+      keyword: "modular kitchen design ideas",
+      searchVolume: 18500,
+      currentRank: 14,
+      prevRank: 28,
+      difficulty: 48,
+      history: [
+        { date: "May 13", rank: 28 },
+        { date: "May 14", rank: 26 },
+        { date: "May 15", rank: 24 },
+        { date: "May 16", rank: 24 },
+        { date: "May 17", rank: 19 },
+        { date: "May 18", rank: 17 },
+        { date: "May 19", rank: 15 },
+        { date: "May 20", rank: 14 }
       ]
     },
     {
       id: "rank-4",
-      keyword: "competitor content gap analyzer",
-      searchVolume: 2400,
-      currentRank: 15,
-      prevRank: 16,
-      difficulty: 38,
+      keyword: "best home interior decorators in Bangalore",
+      searchVolume: 8200,
+      currentRank: 9,
+      prevRank: 15,
+      difficulty: 35,
       history: [
-        { date: "May 13", rank: 19 },
-        { date: "May 14", rank: 18 },
-        { date: "May 15", rank: 18 },
-        { date: "May 16", rank: 17 },
-        { date: "May 17", rank: 17 },
-        { date: "May 18", rank: 16 },
-        { date: "May 19", rank: 15 },
-        { date: "May 20", rank: 15 }
+        { date: "May 13", rank: 15 },
+        { date: "May 14", rank: 14 },
+        { date: "May 15", rank: 14 },
+        { date: "May 16", rank: 12 },
+        { date: "May 17", rank: 11 },
+        { date: "May 18", rank: 10 },
+        { date: "May 19", rank: 9 },
+        { date: "May 20", rank: 9 }
       ]
     }
   ],
   competitorStrategies: [
     {
       id: "comp-1",
-      domain: "hubtrack.io",
-      sharedKeywords: 42,
-      authorityScore: 78,
-      strategyType: "Balanced",
-      backlinksCount: 14300,
+      domain: "livspace.com",
+      sharedKeywords: 245,
+      authorityScore: 84,
+      strategyType: "Aggressive",
+      backlinksCount: 165000,
       topKeywords: [
-        { keyword: "automated backlink tool saas", trafficShare: 0.18, rank: 2 },
-        { keyword: "b2b programmatic marketing system", trafficShare: 0.12, rank: 4 },
-        { keyword: "integrated outbound flow tracker", trafficShare: 0.08, rank: 3 }
+        { keyword: "modular kitchen kitchen cost pricing India", trafficShare: 0.22, rank: 1 },
+        { keyword: "wardrobe modular catalogue book PDF", trafficShare: 0.15, rank: 2 },
+        { keyword: "modern home decors with designs plans", trafficShare: 0.10, rank: 3 }
       ]
     },
     {
       id: "comp-2",
-      domain: "seo-giant.com",
-      sharedKeywords: 110,
-      authorityScore: 89,
-      strategyType: "Content-Focused",
-      backlinksCount: 95400,
+      domain: "homelane.com",
+      sharedKeywords: 198,
+      authorityScore: 78,
+      strategyType: "Balanced",
+      backlinksCount: 124000,
       topKeywords: [
-        { keyword: "seo training guides ultimate", trafficShare: 0.25, rank: 1 },
-        { keyword: "on-page optimization checks", trafficShare: 0.14, rank: 2 },
-        { keyword: "semantic outline schema creator", trafficShare: 0.09, rank: 3 }
+        { keyword: "45 days interior delivery guarantee scheme", trafficShare: 0.28, rank: 1 },
+        { keyword: "best low budget modular drawer fittings", trafficShare: 0.14, rank: 3 },
+        { keyword: "l-shaped kitchen catalog layout images", trafficShare: 0.11, rank: 2 }
       ]
     },
     {
       id: "comp-3",
-      domain: "write-fast-ai.com",
-      sharedKeywords: 25,
-      authorityScore: 62,
-      strategyType: "Content-Focused",
-      backlinksCount: 2100,
+      domain: "woodenstreet.com",
+      sharedKeywords: 82,
+      authorityScore: 76,
+      strategyType: "Commerce-Focused",
+      backlinksCount: 92000,
       topKeywords: [
-        { keyword: "unlimited ai blogger software", trafficShare: 0.32, rank: 1 },
-        { keyword: "bulk article rewrite tool api", trafficShare: 0.15, rank: 2 }
+        { keyword: "solid sheesham wood double beds online", trafficShare: 0.35, rank: 1 },
+        { keyword: "buy space saving dining tables stools", trafficShare: 0.18, rank: 2 }
       ]
     }
   ],
   trafficSources: [
-    { source: "Google Organic Search", visitors: 42350, percentage: 55, trend: [3100, 3120, 3200, 3190, 3350, 3420, 3500], bounceRate: 41.2 },
-    { source: "Direct Traffic", visitors: 19250, percentage: 25, trend: [1100, 1150, 1180, 1200, 1190, 1210, 1250], bounceRate: 34.8 },
-    { source: "Referral (Medium / Dev.to)", visitors: 10780, percentage: 14, trend: [500, 520, 560, 550, 590, 610, 680], bounceRate: 48.5 },
-    { source: "Social Channels (LinkedIn, X)", visitors: 4620, percentage: 6, trend: [200, 210, 240, 230, 260, 280, 310], bounceRate: 58.2 }
+    { source: "Google Organic (Kitchen/Decor Search)", visitors: 38400, percentage: 52, trend: [2900, 2950, 3100, 3150, 3280, 3350, 3500], bounceRate: 38.5 },
+    { source: "Direct Visits (Portfolio / Catalog Views)", visitors: 20720, percentage: 28, trend: [1400, 1420, 1450, 1480, 1490, 1510, 1550], bounceRate: 29.4 },
+    { source: "Social Channels (Pinterest / Instagram / YouTube)", visitors: 11100, percentage: 15, trend: [600, 680, 720, 780, 850, 920, 1050], bounceRate: 46.2 },
+    { source: "Referrals (Decor Forum Blogs / Local Directories)", visitors: 3680, percentage: 5, trend: [180, 190, 210, 220, 240, 260, 280], bounceRate: 41.8 }
   ],
   seoReports: [
     {
       id: "rep-1",
       title: "Quarterly Organic Growth & Competitor Audit",
-      domain: "my-saas-platform.com",
+      domain: "msinteriordecorator.in",
       createdAt: "2026-05-19T10:00:00Z",
-      seoScore: 88,
-      organicTraffic: 42350,
-      summary: "This report reviews the performance optimization sprint from May 2026. Search share has risen by 14.2% following content cluster mappings, while average Google Search positions improved by -1.3 slots.",
+      seoScore: 92,
+      organicTraffic: 73900,
+      summary: "This report reviews the performance optimization sprint from May 2026. Local search footprint in Bangalore/Mumbai regions is up content clusters generated excellent rank leaps (+14.2% organic visitors), and modular kitchens pages became primary index drivers.",
       topInsights: [
-        "Semantic SEO cluster setup in AI content generation drives 42% of our search impression traffic, indicating high topical credibility.",
-        "Competitor gap highlights hubtrack.io maintains dominance on core backlink terms; recommend building 3 deep comparison silos.",
-        "Mobile schema audit solved: we corrected schema graphs, which improved Google crawling speed index by 25%."
+        "Inclusion of Local SEO geographical keywords ('affordable decorator Bangalore') drove a 48% boost in relevant local inquiries.",
+        "Livspace continues to lead in long-tail wardrobe catalogues; we should match them by generating 5 high-resolution bedroom wardrobe layout articles.",
+        "Fixed critical local business schema codes which increased search engine correlation scores by 34%."
       ]
     },
     {
       id: "rep-2",
       title: "On-Page Semantic Strategy Review",
-      domain: "my-saas-platform.com",
+      domain: "msinteriordecorator.in",
       createdAt: "2026-04-15T09:30:00Z",
-      seoScore: 82,
-      organicTraffic: 37100,
-      summary: "A snapshot of core landing pages, evaluating headings structure and entity schema. Highly focused on programmatic key distribution channels.",
+      seoScore: 84,
+      organicTraffic: 62400,
+      summary: "A technical crawl of the primary domain evaluated header structures, image compression payloads, and catalog index files.",
       topInsights: [
-        "Schema payloads are missing on deeper sub-pages, causing low rich snippet impressions.",
-        "Intent matching shows our informational keyword groups carry higher organic click-through rates than the commercial clusters."
+        "Empty descriptions/alt values found on interior design showcase graphics, hiding excellent visual assets from Google Image Search.",
+        "U-shaped layout articles are scoring high on readability and entity match indexes, indicating clear contextual authority on modular designs."
       ]
     }
   ],
@@ -414,8 +439,8 @@ Startups are generating thousands of hyper-focused, structurally perfect pages p
   projects: [
     {
       id: "proj-1",
-      name: "SaaS Platform Engine",
-      domain: "my-saas-platform.com",
+      name: "MS Interior Decor Engine",
+      domain: "msinteriordecorator.in",
       status: "active",
       createdAt: "2026-05-18T10:05:00Z"
     }
@@ -445,8 +470,8 @@ Startups are generating thousands of hyper-focused, structurally perfect pages p
     {
       id: "img-1",
       blogId: "post-1",
-      prompt: "Isometric enterprise software dashboard showing growing green search analytics trends 3D render",
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      prompt: "Scandinavian style modern living room with cozy wooden fittings plant decorations photography raw natural warm light",
+      imageUrl: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80",
       status: "created",
       createdAt: "2026-05-19T14:30:00Z"
     }
@@ -455,41 +480,41 @@ Startups are generating thousands of hyper-focused, structurally perfect pages p
     {
       id: "publog-1",
       blogId: "post-1",
-      title: "The Ultimate Guide to Semantic SEO",
-      slug: "ultimate-guide-semantic-seo",
+      title: "10 Elegant Modern Living Room Design Ideas for Indian Homes",
+      slug: "modern-living-room-ideas-indian-homes",
       status: "success",
       attempts: 1,
       timestamp: "2026-05-19T14:32:00Z",
       platform: "web_cms",
-      details: "Successfully pushed indexable HTML schema elements to robots.xml endpoint."
+      details: "Successfully updated and generated static article page with perfect LocalBusiness microdata payload."
     }
   ],
   automationLogs: [
     {
       id: "autolog-1",
       timestamp: "2026-05-20T04:30:00Z",
-      agentName: "Keyword Discovery Bot",
+      agentName: "Residential Trends Auto-Writer",
       actionType: "keyword_research",
-      message: "Scraped trending competitor keywords. Discovered 5 gaps focusing on programmatic content tools.",
+      message: "Scraped competitor catalogs. Found high-value content gaps in modern false ceiling configurations and bedroom wardrobe schemas.",
       level: "info"
     },
     {
       id: "autolog-2",
       timestamp: "2026-05-20T04:45:00Z",
-      agentName: "Copywriter Pro Agent",
+      agentName: "Modular Layout Trend Monitor",
       actionType: "content_writing",
-      message: "Drafted long-form SEO outline for 'SaaS Automated Backlinking Dashboards' ready for SEO review.",
+      message: "Drafted long-form SEO outline for 'Acrylic vs Laminate modular kitchen setups' ready for agency review.",
       level: "info"
     }
   ]
 };
 
 export const analyticsMock: AnalyticsData = {
-  impressions: 142800,
-  clicks: 9840,
-  avgPosition: 12.4,
-  avgCTR: 6.89,
+  impressions: 242500,
+  clicks: 18940,
+  avgPosition: 8.6,
+  avgCTR: 7.81,
   dates: ["May 12", "May 13", "May 14", "May 15", "May 16", "May 17", "May 18", "May 19"],
-  impressionsTrend: [131000, 133500, 135100, 138000, 137400, 140100, 141200, 142800],
-  clicksTrend: [8900, 9120, 9250, 9400, 9380, 9600, 9720, 9840]
+  impressionsTrend: [221000, 224000, 228000, 230000, 235000, 238000, 240000, 242500],
+  clicksTrend: [16200, 16800, 17100, 17500, 17800, 18100, 18500, 18940]
 };

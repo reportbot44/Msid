@@ -86,7 +86,10 @@ export default function AnalyticsView({ db, isDarkMode, onGenerateReport }: Anal
     // Save to server database state
     fetch('/api/db/save', {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "x-user-email": "akexseni08@gmail.com"
+      },
       body: JSON.stringify({
         db: { ...db, rankings: updated }
       })
